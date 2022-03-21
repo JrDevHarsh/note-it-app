@@ -1,0 +1,122 @@
+@import "../base/reset";
+
+.aside__menu{
+    position: fixed;
+    top: 10vh;
+    left: 0;
+    height: 100%;
+    width: 225px;
+    border-right: 1px solid #c3c3c3;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 0.5rem 1rem;
+    transition: left 0.3s;
+    &.shift{
+        left: -225px;
+        .toggler .line{
+            &.line-1{
+                transform: unset
+            }
+            &.line-2{
+                opacity: 1;
+            }
+            &.line-3{
+                transform: unset
+            }
+        }
+    }
+    .btn.btn__createNote{
+        width: 100%;
+        padding: 0.25rem 0.75rem;
+        font-size: 1.15rem;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        cursor: pointer;
+        border-radius: 0.5rem;
+        border: 1px solid;
+        &:active{
+            transform: scale(0.99);
+        }
+    }
+    .aside__notes_content{
+        width: 100%;
+        .notes__list{
+            .notes__item{
+                margin: 1rem 0;
+                position: relative;
+                overflow: hidden;
+                padding: 0.5rem;
+                border-radius: 0.5rem;
+                cursor: pointer;
+                .note__title{
+                    font-size: 1rem;
+                    font-weight: 500;
+                }
+                .note__body{
+                    font-size: 0.9rem;
+                    margin: 0.5rem 0;
+                }
+                .note__updated{
+                    font-size: 0.8rem;
+                    opacity: 0.8;
+                    text-align: right;
+                }
+                .note__tools{
+                    position: absolute;
+                    width: auto;
+                    transition: all 0.5s;
+                    height: 100%;
+                    background: rgb(252, 242, 242);
+                    display: flex;
+                    align-items: center;
+                    transition: right 0.5s;
+                    top: 0;
+                    right: -100%;
+                    z-index: 1;
+                    span{
+                        cursor: pointer;
+                        margin: 0 0.25rem;
+                        padding: 0.25rem;
+                    }
+                }
+                &:hover{
+                    background: #d1d1d1;
+                }
+                &.active{
+                    background: #d1d1d1;
+                }
+                &:hover .note__tools{
+                    right: 0;
+                }
+            }
+        }
+    }
+    .toggler{
+        width: 30px;
+        height: 23px;
+        position: absolute;
+        top: 0;
+        right: -31px;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        cursor: pointer;
+        .line{
+            width: 100%;
+            height: 3px;
+            display: block;
+            background: #000;
+            transition: all 0.3s;
+            &.line-1{
+                transform: translate(0px, 10px) rotate(45deg);
+            }
+            &.line-2{
+                opacity: 0;
+            }
+            &.line-3{
+                transform: translate(0px, -10px) rotate(-45deg);
+            }
+        }
+    }
+}
