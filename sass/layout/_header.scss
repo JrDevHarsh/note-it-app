@@ -1,0 +1,45 @@
+@import "../base/reset";
+
+.header__container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 10vh;
+    border-bottom: 1px solid #c3c3c3;
+    background: #fff;
+    z-index: 1;
+    .header__navbar{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 75rem;
+        width: 100%;
+        margin: 0 auto;
+        .navbar__logo{
+            .navbar__logo_link{
+                font-size: 2.25rem;
+                font-weight: 500;
+                letter-spacing: 0.8px;
+                color: black;
+            }
+        }
+        .navbar__menu{
+            display: flex;
+            align-items: center;
+            .navbar__menu_link{
+                padding: 0.25rem 1rem;
+                font-size: 1.15rem;
+                text-transform: uppercase;
+                color: #000;
+                transition: color 0.3s, background 0.5s;
+                &:hover{
+                    color: #fff;
+                    background: #000;
+                }
+            }
+        }
+    }
+}
